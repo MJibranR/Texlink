@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="contact-info">
               <li>
                 <span className="icon">📍</span>
-                <span>UMAR BHAI KA GHAR</span>
+                <span>Karachi</span>
               </li>
               <li>
                 <span className="icon">📞</span>

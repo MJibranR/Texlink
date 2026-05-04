@@ -59,8 +59,10 @@ export default function Header() {
         </Link>
         
         <nav className="nav">
-          <Link href="/marketplace">Marketplace</Link>
-          <Link href="/sell">Sell</Link>
+          <Link href="/">Home</Link>
+          <Link href="/marketplace">All products</Link>
+          <Link href="/cart">Checkout</Link>
+          <Link href="/sell">Sell On Texlink</Link>
         </nav>
         
         <div className="header-actions">
