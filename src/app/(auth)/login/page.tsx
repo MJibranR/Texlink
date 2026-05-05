@@ -98,21 +98,21 @@ export default function LoginPage() {
             <label className="checkbox">
               <input type="checkbox" /> Remember me
             </label>
-            <Link href="/forgot-password" className="forgot-link">
+            {/* <Link href="/forgot-password" className="forgot-link">
               Forgot password?
-            </Link>
+            </Link> */}
           </div>
 
           <button type="submit" disabled={loading} className="login-btn">
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
-
-        <div className="demo-credentials">
+        {/* NO MORE DEMO  */}
+        {/* <div className="demo-credentials">
           <p><strong>Demo Credentials:</strong></p>
           <p>👑 Admin: admin@texlink.com / admin123</p>
           <p>👤 User: any@email.com / any password</p>
-        </div>
+        </div> */}
 
         <div className="login-footer">
           <p>

@@ -144,15 +144,16 @@ export default function Home() {
           ) : (
             <div className="categories-grid">
               {categories.map((category) => (
-                <Link 
-                  href={`/marketplace?category=${category.name}`} 
+                <div 
+                  // href={`/marketplace?category=${category.name}`} 
+                  // Link is removed because of colour issue, will be added in next iteration
                   key={category.id} 
                   className="category-card"
                 >
                   <div className="category-icon">{category.icon || '📁'}</div>
-                  <h3>{category.name}</h3>
+                  <h3 className="category-name">{category.name}</h3>
                   <p>{category.description || 'Shop now'}</p>
-                </Link>
+                </div>
               ))}
             </div>
           )}
@@ -169,7 +170,7 @@ export default function Home() {
             <div className="products-grid">
               {featuredProducts.map((product) => (
                 <div key={product.id} className="product-card">
-                    <Link href={`/marketplace/${product.id}`} className="btn-view">
+                    <Link href={`/marketplace/${product.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
                   <div className="product-image">
                     {product.image_url ? (
                       <img src={product.image_url} alt={product.title} />
@@ -197,7 +198,7 @@ export default function Home() {
       <section className="newsletter">
         <div className="container">
           <div className="newsletter-content">
-            <h2>Sign Up And Save</h2>
+            <h2 style={{color: 'inherit'}}>Sign Up And Save</h2>
             <p>Subscribe to get special offers, new arrivals, and once-in-a-lifetime deals.</p>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="Enter your email" required />
@@ -329,7 +330,7 @@ export default function Home() {
           text-align: center;
           border-radius: 12px;
           text-decoration: none;
-          color: #333;
+          color: #2c3e50;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           transition: transform 0.3s;
         }
@@ -339,6 +340,12 @@ export default function Home() {
         .category-icon {
           font-size: 48px;
           margin-bottom: 15px;
+        }
+        .category-name{
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #2c3e50;
         }
         .products-grid {
           display: grid;
@@ -351,6 +358,12 @@ export default function Home() {
           overflow: hidden;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        /* ADD THIS */
+        .product-card a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          }
         .product-image {
           height: 200px;
           background: #f5f5f5;
@@ -395,7 +408,7 @@ export default function Home() {
         }
         .no-products {
           text-align: center;
-          padding: 40px;
+          padding: 40px
           color: #666;
           grid-column: span 4;
         }

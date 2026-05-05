@@ -102,6 +102,7 @@ export default function Marketplace() {
         <>
           <div className="results-count">{filteredProducts.length} products found</div>
           <div className="products-grid">
+            
             {filteredProducts.map(product => (
               <div key={product.id} className="product-card">
                 <div className="product-image">
@@ -117,7 +118,9 @@ export default function Marketplace() {
                   <p className="seller">{product.seller_name}</p>
                   <p className="location">📍 {product.city}</p>
                   <div className="badge">✓ Verified Supplier</div>
-                  <Link href={`/marketplace/${product.id}`} className="btn-view">View Details</Link>
+                  <Link href={`/marketplace/${product.id}`} className="badge">
+                    View Details
+                  </Link>
                 </div>
               </div>
             ))}
